@@ -1,0 +1,18 @@
+# aux tex files
+*.aux
+*.bbl
+*.blg
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fls
+*.fdb*
+*.gz
+.Rhistory
+
+# pdf & word documents
+beyond*.pdf
+e4d*.pdf
+*.docx

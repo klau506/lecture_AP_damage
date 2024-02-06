@@ -1,0 +1,182 @@
+\documentclass{beamer}
+\usepackage{amsthm,amsmath,amssymb,amsfonts,amscd}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage[all]{xy}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage[english]{babel}
+\usepackage[scr=boondoxo]{mathalfa}
+% \usepackage[nottoc]{tocbibind}
+\usepackage[justification=centering]{caption}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{stmaryrd}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[round]{natbib}  
+% \bibliographystyle{plainnat}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{tikzmark}
+
+
+\usepackage[final]{pdfpages}
+\usepackage{relsize}
+
+\mode<presentation>
+{
+  \usetheme{Boadilla}  
+  \usecolortheme{beaver}
+  \setbeamercolor{author in head/foot}{fg=white,bg=mygreen}
+  \setbeamercolor{title in head/foot}{fg=mygreen,bg=mygreengray}
+  \setbeamercolor{date in head/foot}{fg=mygreen,bg=white}
+  \setbeamercolor{page number in head/foot}{fg=white,bg=mygreen}
+  
+  \usefonttheme{default}
+  \setbeamercolor{title}{fg=mygreen}
+  \setbeamercolor{frametitle}{fg=mygreen}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamercolor{section number projected}{bg=mywhite,fg=mygreen}
+  \setbeamercolor{subsection number projected}{bg=mygreen,fg=mygreen}
+  \setbeamercolor{subsubsection number projected}{bg=mywhite,fg=mygreen}
+  \setbeamertemplate{itemize item}{\color{mygreen}$\star$}
+  \setbeamertemplate{itemize subitem}{\color{mygreen}$\triangleright$}
+  \setbeamertemplate{itemize subsubitem}{\color{mygreen}$\triangleright$}
+  % Customize enumerate items
+  \setbeamertemplate{enumerate items}[default]
+  \setbeamercolor{enumerate item}{fg=mygreen,bg=mygray}
+}
+
+\definecolor{mygray}{HTML}{7C6C6C}
+\definecolor{mygreen}{HTML}{53b679}
+\definecolor{myred}{HTML}{BB0C0C}
+\definecolor{mypurple}{HTML}{800080}
+\definecolor{mywhite}{HTML}{DDDDDD}
+\definecolor{mygreengray}{HTML}{e1e8e3}
+
+\newcommand{\pmm}{PM$_{2.5}$}
+\newcommand{\oo}{O$_{3}$}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\renewcommand{\deg}{$^\circ$}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Air pollution health damages]{Methods for the assessment of air pollution health damages}
+
+\author[Clàudia Rodés Bachs - BC3]{Clàudia Rodés Bachs\\[3mm]Basque Centre for Climate Change}
+\date{February 13, 2024}
+\titlegraphic{\includegraphics[width=3cm]{extraFigs/BC3_logo.png}}
+
+% logo
+\newcommand\AtPagemyUpperLeft[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.85\paperwidth},\LenToUnit{0.895\paperheight}){#1}}}
+\AddToShipoutPictureFG{
+  \AtPagemyUpperLeft{{\includegraphics[height=1cm,keepaspectratio]{extraFigs/BC3_logo.png}}}
+}
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage 
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[white] ([xshift=6.5cm, yshift=7.5cm] current page.center) rectangle ++(-2cm,-2cm);
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents 
+\end{frame}
+
+%--------------------------------
+%	PRESENTATION SLIDES
+%--------------------------------
+
+\section{Scientific evidence: Why does climate change affect our health and economy?} 
+\input{Introduction_health}
+
+% %------------------------------------------------
+
+\section{Brief overview of climate policies} 
+\input{Introduction_policies}
+
+% %------------------------------------------------
+
+\section{How can we compute the air pollution damage?} 
+\input{ComputationFlow}
+
+% %------------------------------------------------
+
+\section{Four methods to compute the air pollution health damage} 
+\input{EconMethods}
+
+% %------------------------------------------------
+
+\section{Statistical methods to analyze the results} 
+\input{StatisticalMethods}
+
+% %------------------------------------------------
+
+\section{Summary \& Discussion} 
+\begin{frame}
+  \frametitle{Summary \& Discussion}
+  \begin{itemize}
+      \setlength\itemsep{1em}
+      \pause \item Does \emph{net-zero} climate policy have significantly more co-benefits for air pollution damages outcomes?
+      \pause \item Does \emph{net-zero} climate policy increase the economic co-benefits?
+      \pause \item What contributes more to the uncertainty in air pollution economic outcomes: emissions uncertainty, impact functions uncertainty, econometric equations, or the elasticity choice?
+      \pause \item How does the \emph{net-zero} climate policy affect the tails' heaviness?
+      \pause \item Which regions will benefit the most from the \emph{net-zero} climate policy? And when will these benefits be more tangible, in the near term or in the mid-century?
+  \end{itemize}
+\end{frame}
+  
+% %------------------------------------------------
+
+\section{Master Thesis Proposal} 
+\input{TFM}
+
+% %------------------------------------------------
+
+\begin{frame}
+\centering
+    Thank you for your attention!!\\
+    \vspace{1cm}
+    Questions?\\
+    \vspace{3cm}
+    \small\textcolor{mygreen}{claudia.rodes@bc3research.org}
+\end{frame}
+
+%------------------------------------------------
+
+\addtocounter{framenumber}{-1}
+\begin{frame}[allowframebreaks]
+\frametitle{Bibliography}
+\bibliographystyle{apalike}
+\bibliography{myLibrary}
+\end{frame}
+
+%------------------------------------------------
+
+% \section{Extra Slides} 
+\input{extraSlides}
+% Idea: crear codi d'R i dades per a jugar amb les elasticitats i veure com afecta a cada regió
+
+%------------------------------------------------
+
+\end{document}
